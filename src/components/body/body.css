@@ -1,0 +1,30 @@
+.catContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+.fruits,
+.meat,
+.grain,
+.condiments,
+.cannedFood,
+.dairy,
+.toiletries,
+.homeSupplies,
+.other {
+  /* background-color: aqua; */
+  height: 350px;
+  position: relative;
+  text-align: center;
+  border: 1px solid black;
+}
+
+span {
+  position: absolute;
+  top: -0.5rem;
+  left: 6rem;
+  background-color: white;
+}
