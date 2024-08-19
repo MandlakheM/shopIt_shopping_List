@@ -1,3 +1,29 @@
 .itemContainer{
     cursor: pointer;
+    display: flex;
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    border: 1px solid red;
+}
+
+.icon{
+    width: 10%;
+}
+
+.itemName{
+    width: 40%;
+}
+
+.itemQuantity{
+    width: 20%;
+}
+
+.description{
+    width: 40%;
+    overflow-y: hidden;
+    overflow: none;
+    line-height: 1;
 }

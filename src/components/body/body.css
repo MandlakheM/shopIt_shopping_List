@@ -21,6 +21,8 @@
   position: relative;
   text-align: center;
   border: 1px solid black;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* span {

@@ -1,11 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "amu",
-      "surname": "mang",
-      "username": "amu@gmail.com",
-      "password": "12345"
+      "id": "91ce",
+      "userId": "2024-08-19T09:05:18.311Z",
+      "name": "me",
+      "surname": "andyou",
+      "username": "me@gmail.com",
+      "password": "123456789"
     }
   ],
   "items": [
@@ -36,6 +37,20 @@
       "itemQuantity": "1",
       "itemDescription": "deoderant",
       "itemCategory": "toiletries"
+    },
+    {
+      "id": "e210",
+      "itemName": "cake",
+      "itemQuantity": "2",
+      "itemDescription": "",
+      "itemCategory": "other"
+    },
+    {
+      "id": "0d50",
+      "itemName": "",
+      "itemQuantity": "",
+      "itemDescription": "",
+      "itemCategory": ""
     }
   ]
 }

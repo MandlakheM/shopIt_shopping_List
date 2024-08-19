@@ -66,7 +66,7 @@ function addModal({ deactivateModal, editing }) {
               <>
                 <button>done </button>
                 <button>edit </button>
-                <button onClick={handleDelete}>delete </button>
+                <button>delete </button>
               </>
             ) : (
               <button type="submit">add item</button>

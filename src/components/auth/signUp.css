@@ -1,0 +1,11 @@
+.authContainer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+}
