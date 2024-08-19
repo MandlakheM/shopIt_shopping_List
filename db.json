@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "amu",
+      "surname": "mang",
+      "username": "amu@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "itemName": "switch",
+      "itemDescription": "an energy drink",
+      "itemQuantity": 6,
+      "itemCategory": "drinks"
+    },
+    {
+      "id": 2,
+      "itemName": "apple",
+      "itemDescription": "just a fruit",
+      "itemQuantity": 2,
+      "itemCategory": "fruints"
+    },
+    {
+      "id": "92f4",
+      "itemName": "kota",
+      "itemQuantity": "2",
+      "itemDescription": "a kasi meal",
+      "itemCategory": "meat"
+    },
+    {
+      "id": "40e8",
+      "itemName": "roll on",
+      "itemQuantity": "1",
+      "itemDescription": "deoderant",
+      "itemCategory": "toiletries"
+    }
+  ]
+}

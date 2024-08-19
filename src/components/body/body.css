@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
+  position: relative;
 }
 
 .fruits,
@@ -16,15 +17,21 @@
 .homeSupplies,
 .other {
   /* background-color: aqua; */
-  height: 350px;
+  height: 230px;
   position: relative;
   text-align: center;
   border: 1px solid black;
 }
 
-span {
+/* span {
   position: absolute;
   top: -0.5rem;
   left: 6rem;
   background-color: white;
+} */
+
+.addButton {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
 }

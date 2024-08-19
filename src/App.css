@@ -1,18 +1,15 @@
-/* .gutter{
-    padding-left: 5%;
-    padding-right: 5%;
-} */
-
-.appContainer{
-    width: 100dvw;
-    height: 100dvh;
-    /* background-color: aqua; */
-    display: grid;
-    place-content: center;
+.appContainer {
+  width: 100dvw;
+  height: 100dvh;
+  /* background-color: aqua; */
+  display: grid;
+  place-content: center;
+  overflow-x: hidden;
 }
 
-.layout{
-    min-width:80dvw;
-    min-height: 100dvh;
-    /* background-color: black; */
+.layout {
+  min-width: 80dvw;
+  min-height: 100dvh;
+  /* background-color: black; */
 }
+
