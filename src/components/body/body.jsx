@@ -4,8 +4,9 @@ import "./body.css";
 import Item from "../item/item";
 import Button from "../floatingButton/button";
 import AddModal from "../modals/addModal/addModal";
-import { fetchShoppingList } from "../../redux/action";
+import { fetchShoppingList, removeShoppingItem } from "../../redux/action";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 
 function Body(props) {
   const [modal, setModal] = useState(false);
@@ -27,6 +28,15 @@ function Body(props) {
   const toggleEditing = () => {
     setEditing(true);
     console.log("we are editing an item");
+    <AddModal />;
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm("Do you want to delete this item? ")) {
+      props.removeShopItem(id);
+      props.loadShopItem();
+      toast.success("Item deleted");
+    }
   };
 
   return props.shopItem.loading ? (
@@ -43,47 +53,24 @@ function Body(props) {
         <div className="fruits">
           <span>FRUITS/VEGITABLES</span>
           <ul>
-            {/* <li>
-              <Item toggleEditing={toggleEditing} />
-              <Item />
-              <Item />
-            </li> */}
             {props.shopItem.shoppinglist &&
               props.shopItem.shoppinglist.map((item) => (
-                <li key={item.id}>
-                  <p>item name: {item.itemName}</p>
-                  <p>item description: {item.itemDescription}</p>
-                  <p>item quantity: {item.itemQuantity}</p>
-                </li>
+                <Item
+                  key={item.id}
+                  itemName={item.itemName}
+                  itemDescription={item.itemDescription}
+                  itemQuantity={item.itemQuantity}
+                  toggleEditing={toggleEditing}
+                />
               ))}
           </ul>
         </div>
         <div className="meat">
           <span>MEAT/POULTRY</span>
-          {/* <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} />
-          <Item toggleEditing={toggleEditing} /> */}
         </div>
-        {/* <div className="grain">
-          <span>GRAINS</span>
-        </div>
-        <div className="condiments">
-          <span>CONDIMENTS/SAUCE</span>
-        </div> */}
         <div className="cannedFood">
           <span>CANNED GOODS</span>
         </div>
-        {/* <div className="dairy">
-          <span>DAIRY/DELI</span>
-        </div> */}
         <div className="toiletries">
           <span>TOILETRIES</span>
         </div>
@@ -99,6 +86,13 @@ function Body(props) {
         {modal && (
           <AddModal deactivateModal={deactivateModal} editing={editing} />
         )}
+        {editing && (
+          <AddModal
+            deactivateModal={deactivateModal}
+            editing={editing}
+            handleDelete={(id)=>handleDelete(id)}
+          />
+        )}
       </div>
     </main>
   );
@@ -113,6 +107,7 @@ const stateToProps = (state) => {
 const dispatchToProps = (dispatch) => {
   return {
     loadShopItem: () => dispatch(fetchShoppingList()),
+    removeShopItem: (id) => dispatch(removeShoppingItem(id)),
   };
 };
 

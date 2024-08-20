@@ -16,8 +16,8 @@ function App() {
         <div className="appContainer">
           <div className="layout">
             <Header />
-            {/* <Body /> */}
-            <SignUp/>
+            <Body />
+            {/* <SignUp/> */}
           </div>
         </div>
       </Provider>

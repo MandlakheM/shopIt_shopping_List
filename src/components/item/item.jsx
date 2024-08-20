@@ -3,20 +3,20 @@ import { useState } from "react";
 import "./item.css";
 import { RiFileList3Line } from "react-icons/ri";
 
-function item({ toggleEditing }) {
+function item({ itemName, itemDescription, itemQuantity, toggleEditing }) {
   return (
     <div className="itemContainer" onClick={toggleEditing}>
       <div className="icon">
         <RiFileList3Line />
       </div>
       <div className="itemName">
-        <p>buy meat</p>
+        <p>name: {itemName}</p>
       </div>
       <div className="itemQuantity">
-        <p>3</p>
+        <p>quantity: {itemQuantity}</p>
       </div>
       <div className="description">
-        <p>get a fresh T-bone steak</p>
+        <p>description: {itemDescription}</p>
       </div>
     </div>
   );

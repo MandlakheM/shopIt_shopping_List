@@ -3,7 +3,7 @@ import "./signUp.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-function SignUp() {
+function SignUp({ deactivateSignUpModal }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [username, setUsername] = useState("");
@@ -49,46 +49,51 @@ function SignUp() {
     console.log(userobj);
 
     axios
-    .post("http://localhost:3030/users", userobj)
-    .then((res) => {
-      toast.success("User SignUp successful");
-    })
-    .catch((err) => {
-      toast.error("Sign Up Failed due to :" + err.message);
-    });
+      .post("http://localhost:3030/users", userobj)
+      .then((res) => {
+        toast.success("User SignUp successful");
+      })
+      .catch((err) => {
+        toast.error("Sign Up Failed due to :" + err.message);
+  
+      });
+    deactivateSignUpModal();
   }
 
   return (
-    <div className="authContainer">
-      <form onSubmit={handleSubmit}>
-        <div className="formContainer">
-          <label>Full Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <label>Surname</label>
-          <input
-            type="text"
-            value={surname}
-            onChange={(e) => setSurname(e.target.value)}
-          />
-          <label>Username (Email)</label>
-          <input
-            type="email"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Sign Up</button>
-        </div>
-      </form>
+    <div className="modal">
+      <div className="overlay" onClick={deactivateSignUpModal}></div>
+      <div className="modalContent">
+        <form onSubmit={handleSubmit}>
+          <div className="formContainer">
+            <label>Full Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label>Surname</label>
+            <input
+              type="text"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+            />
+            <label>Username (Email)</label>
+            <input
+              type="email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

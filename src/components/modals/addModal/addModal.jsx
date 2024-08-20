@@ -3,7 +3,7 @@ import "./addModal.css";
 import { useDispatch } from "react-redux";
 import { addShoppingItem } from "../../../redux/action";
 
-function addModal({ deactivateModal, editing }) {
+function addModal({ deactivateModal, editing, handleDelete }) {
   const [itemName, setItemName] = useState("");
   const [itemQuantity, setItemQuantity] = useState("");
   const [itemDescription, setItemDescription] = useState("");
@@ -12,9 +12,30 @@ function addModal({ deactivateModal, editing }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const shoppingobj = { itemName, itemQuantity, itemDescription, itemCategory };
-    dispatch(addShoppingItem(shoppingobj))
-    deactivateModal()
+    const userId = localStorage.getItem("userId");
+    const shoppingobj = {
+      itemName,
+      itemQuantity,
+      itemDescription,
+      itemCategory,
+      userId,
+    };
+    dispatch(addShoppingItem(shoppingobj));
+    deactivateModal();
+  }
+
+  function handleEdit(e) {
+    e.preventDefault();
+    const userId = localStorage.getItem("userId");
+    const shoppingobj = {
+      itemName,
+      itemQuantity,
+      itemDescription,
+      itemCategory,
+      userId,
+    };
+    dispatch(addShoppingItem(shoppingobj));
+    deactivateModal();
   }
 
   return (
@@ -66,7 +87,7 @@ function addModal({ deactivateModal, editing }) {
               <>
                 <button>done </button>
                 <button>edit </button>
-                <button>delete </button>
+                <button onClick={handleDelete}>delete </button>
               </>
             ) : (
               <button type="submit">add item</button>

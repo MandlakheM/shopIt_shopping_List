@@ -32,25 +32,20 @@
       "itemCategory": "meat"
     },
     {
-      "id": "40e8",
-      "itemName": "roll on",
+      "id": "ece1",
+      "itemName": "cupcakes",
+      "itemQuantity": "10",
+      "itemDescription": "from mugg and bean",
+      "itemCategory": "fruits/veg",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "42db",
+      "itemName": "juice",
       "itemQuantity": "1",
-      "itemDescription": "deoderant",
-      "itemCategory": "toiletries"
-    },
-    {
-      "id": "e210",
-      "itemName": "cake",
-      "itemQuantity": "2",
-      "itemDescription": "",
-      "itemCategory": "other"
-    },
-    {
-      "id": "0d50",
-      "itemName": "",
-      "itemQuantity": "",
-      "itemDescription": "",
-      "itemCategory": ""
+      "itemDescription": "oros",
+      "itemCategory": "meat",
+      "userId": "2024-08-19T09:05:18.311Z"
     }
   ]
 }
