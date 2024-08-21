@@ -1,18 +1,26 @@
-.header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* background-color: aqua; */
-    height: 10%;
-    padding-top: 1rem;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: aqua; */
+  height: 10%;
+  padding-top: 1rem;
 }
 
-.auth{
-    display: flex;
-    justify-content: flex-end;
+.auth {
+  display: flex;
+  justify-content: flex-end;
 }
 
-#it{
-    color: darkorange;
-    font-size: 2rem;
-    font-weight: 500;
+.auth button {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  border: 1px solid orange;
+  background-color: transparent;
+}
+
+#it {
+  color: darkorange;
+  font-size: 2rem;
+  font-weight: 500;
 }

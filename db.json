@@ -7,6 +7,14 @@
       "surname": "andyou",
       "username": "me@gmail.com",
       "password": "123456789"
+    },
+    {
+      "id": "de1d",
+      "userId": "2024-08-21T20:28:08.742Z",
+      "name": "amu",
+      "surname": "mang",
+      "username": "amu@gmail.com",
+      "password": "123456"
     }
   ],
   "items": [
@@ -17,13 +25,6 @@
       "itemQuantity": 2,
       "itemCategory": "fruits/veg",
       "userId": "2024-08-19T09:05:18.311Z"
-    },
-    {
-      "id": "92f4",
-      "itemName": "kota",
-      "itemQuantity": "2",
-      "itemDescription": "a kasi meal",
-      "itemCategory": "meat"
     },
     {
       "id": "ece1",
@@ -39,14 +40,6 @@
       "itemQuantity": "16",
       "itemDescription": "energy drink",
       "itemCategory": "canned goods",
-      "userId": "2024-08-19T09:05:18.311Z"
-    },
-    {
-      "id": "1b8d",
-      "itemName": "vaseline",
-      "itemQuantity": "1",
-      "itemDescription": "blue seal",
-      "itemCategory": "toiletries",
       "userId": "2024-08-19T09:05:18.311Z"
     },
     {
@@ -98,14 +91,6 @@
       "userId": "2024-08-19T09:05:18.311Z"
     },
     {
-      "id": "1200",
-      "itemName": "chappies",
-      "itemQuantity": "5",
-      "itemDescription": "watermelon",
-      "itemCategory": "other",
-      "userId": "2024-08-19T09:05:18.311Z"
-    },
-    {
       "id": "79b2",
       "itemName": "",
       "itemQuantity": "",
@@ -135,6 +120,14 @@
       "itemQuantity": "4",
       "itemDescription": "from mugg n bean",
       "itemCategory": "fruits/veg",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "c63f",
+      "itemName": "polish",
+      "itemQuantity": "1",
+      "itemDescription": "kiwi",
+      "itemCategory": "home supplies",
       "userId": "2024-08-19T09:05:18.311Z"
     }
   ]

@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import "./signUp.css";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Header from "../header/header";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 function SignUp({ deactivateSignUpModal }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -52,6 +59,8 @@ function SignUp({ deactivateSignUpModal }) {
       .post("http://localhost:3030/users", userobj)
       .then((res) => {
         toast.success("User SignUp successful");
+        navigate("/");
+
       })
       .catch((err) => {
         toast.error("Sign Up Failed due to :" + err.message);
@@ -61,6 +70,8 @@ function SignUp({ deactivateSignUpModal }) {
   }
 
   return (
+    <>
+    <Header/>
     <div className="modal">
       <div className="overlay" onClick={deactivateSignUpModal}></div>
       <div className="modalContent">
@@ -92,10 +103,14 @@ function SignUp({ deactivateSignUpModal }) {
             />
             <button type="submit">Sign Up</button>
           </div>
+          <br />
+          <br />
+          <p>Already have an account ?<Link to={"/"}>Sign In</Link></p>
         </form>
+        
       </div>
     </div>
-  );
+    </> );
 }
 
 export default SignUp;

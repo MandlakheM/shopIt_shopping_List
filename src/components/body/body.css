@@ -110,3 +110,12 @@
     transform: rotate(-1turn);
   }
 }
+
+#nodata{
+     font-weight: 800;
+     font-size: 2rem;
+     color: dimgrey;
+     position: fixed;
+     z-index: -1;
+     padding-left: 80px;
+}

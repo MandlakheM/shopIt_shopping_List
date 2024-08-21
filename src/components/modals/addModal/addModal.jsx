@@ -3,13 +3,18 @@ import "./addModal.css";
 import { useDispatch } from "react-redux";
 import { addShoppingItem, updateShoppingItem } from "../../../redux/action";
 import { IoMdCloseCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
-function AddModal({ deactivateModal, editing, handleDelete, itemId, initialData }) {
+
+function AddModal({ deactivateModal, editing, handleDelete, itemId, initialData, load }) {
   const [itemName, setItemName] = useState("");
   const [itemQuantity, setItemQuantity] = useState("");
   const [itemDescription, setItemDescription] = useState("");
   const [itemCategory, setItemCategory] = useState("");
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (editing && initialData) {
@@ -38,6 +43,9 @@ function AddModal({ deactivateModal, editing, handleDelete, itemId, initialData 
     }
 
     deactivateModal();
+    load(userId)
+    // navigate("/yourList");
+
   }
 
   return (

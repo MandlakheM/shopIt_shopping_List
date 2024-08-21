@@ -55,11 +55,11 @@ export const getItemObj = (data) => {
   };
 };
 
-export const fetchShoppingList = () => {
+export const fetchShoppingList = (userId) => {
   return (dispatch) => {
     dispatch(makeRequest());
     axios
-      .get("http://localhost:3030/items")
+      .get(`http://localhost:3030/items?userId=${userId}`)
       .then((res) => {
         const shoppingList = res.data;
         dispatch(getShoppingList(shoppingList));

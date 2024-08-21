@@ -2,11 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import SignUp from "../auth/signUp";
 import SignIn from "../auth/signIn";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+
 
 function Header() {
   const [signUpModal, setSignUpModal] = useState(false);
   const [signInModal, setSignInModal] = useState(false);
   const [userToggle, setUserToggle] = useState(false);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const user = localStorage.getItem("userId");
@@ -37,8 +44,9 @@ function Header() {
     localStorage.removeItem("userId");
     toast.success("You have signed out");
     setUserToggle(false);
-    // navigate("/");
-  }
+    navigate("/");
+
+    }
 
   return (
     <header className="header">
@@ -51,13 +59,9 @@ function Header() {
           ) : (
             <>
               <button onClick={activateSignInModal}>Sign In</button>
-              {signInModal && (
-                <SignIn deactivateSignInModal={deactivateSignInModal} />
-              )}
+
               <button onClick={activateSignUpModal}>Sign Up</button>
-              {signUpModal && (
-                <SignUp deactivateSignUpModal={deactivateSignUpModal} />
-              )}
+
             </>
           )}
         </div>
