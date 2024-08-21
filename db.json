@@ -12,10 +12,11 @@
   "items": [
     {
       "id": "2",
-      "itemName": "apple",
+      "itemName": "apples",
       "itemDescription": "just a fruit",
       "itemQuantity": 2,
-      "itemCategory": "fruits/veg"
+      "itemCategory": "fruits/veg",
+      "userId": "2024-08-19T09:05:18.311Z"
     },
     {
       "id": "92f4",
@@ -126,6 +127,14 @@
       "itemQuantity": "",
       "itemDescription": "",
       "itemCategory": "",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "db10",
+      "itemName": "big muffins",
+      "itemQuantity": "4",
+      "itemDescription": "from mugg n bean",
+      "itemCategory": "fruits/veg",
       "userId": "2024-08-19T09:05:18.311Z"
     }
   ]

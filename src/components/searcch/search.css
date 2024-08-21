@@ -1,0 +1,17 @@
+.searchContainer {
+  width: 100%;
+  /* background-color: aqua; */
+  height: 10%;
+  display: grid;
+  place-items: center;
+  margin: 20px 0;
+}
+
+.search input {
+  height: 2.5rem;
+  background-color: #fe9d0b;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  padding: 0 20px;
+}

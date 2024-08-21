@@ -7,16 +7,30 @@ import AddModal from "../modals/addModal/addModal";
 import { fetchShoppingList, removeShoppingItem } from "../../redux/action";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
+import Search from "../searcch/search";
+import Header from "../header/header";
 
 function Body(props) {
   const [modal, setModal] = useState(false);
   const [editing, setEditing] = useState(false);
   const [selectedItemId, setSelectedItemId] = useState(null);
   const [selectedItemData, setSelectedItemData] = useState(null);
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const fruitCont = 0;
 
   useEffect(() => {
     props.loadShopItem();
   }, []);
+
+  useEffect(() => {
+    if (props.shopItem.shoppinglist && props.shopItem.shoppinglist.length > 0) {
+      localStorage.setItem(
+        "Item list",
+        JSON.stringify(props.shopItem.shoppinglist)
+      );
+    }
+  }, [props.shopItem.shoppinglist]);
 
   const activateModal = () => {
     setModal(true);
@@ -56,132 +70,128 @@ function Body(props) {
     </div>
   ) : (
     <main>
+      <Header />
+      <Search onSearch={setFilteredItems} />
       <div className="catContainer">
         <div className="fruits">
           <span>FRUITS/VEGITABLES/DAIRY</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "fruits/veg")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "fruits/veg")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="meat">
           <span>MEAT/POULTRY</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "meat")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "meat")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="cannedFood">
           <span>DRINKS/CANNED GOODS</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "canned goods")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "canned goods")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="toiletries">
           <span>TOILETRIES</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "toiletries")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "toiletries")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="homeSupplies">
           <span>HOME SUPPLIES</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "home supplies")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "home supplies")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="other">
           <span>OTHER</span>
-          {props.shopItem.shoppinglist &&
-            props.shopItem.shoppinglist
-              .filter((item) => item.itemCategory === "other")
-              .map((item) => (
-                <Item
-                  key={item.id}
-                  itemName={item.itemName}
-                  itemDescription={item.itemDescription}
-                  itemQuantity={item.itemQuantity}
-                  itemCategory={item.itemCategory}
-                  toggleEditing={() => {
-                    setEditing(true);
-                    setSelectedItemId(item.id);
-                    setSelectedItemData(item);
-                  }}
-                  itemId={item.id}
-                />
-              ))}
+          {filteredItems
+            .filter((item) => item.itemCategory === "other")
+            .map((item) => (
+              <Item
+                key={item.id}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemQuantity={item.itemQuantity}
+                itemCategory={item.itemCategory}
+                toggleEditing={() => {
+                  setEditing(true);
+                  setSelectedItemId(item.id);
+                  setSelectedItemData(item);
+                }}
+                itemId={item.id}
+              />
+            ))}
         </div>
         <div className="addButton">
           <Button activateModal={activateModal} />
