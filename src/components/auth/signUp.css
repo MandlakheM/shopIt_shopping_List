@@ -3,6 +3,8 @@
   flex-direction: column;
   /* height: 100%; */
   gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.8rem;
 }
 
 .modal,
@@ -16,11 +18,11 @@
   position: fixed;
   overflow: hidden;
   z-index: 1;
-
 }
 
 .overlay {
   background: rgba(49, 49, 49, 0.8);
+  /* background: url(../.././assets/Wavy_Gen-04_Single-06.jpg); */
 }
 
 .modalContent {
@@ -36,5 +38,15 @@
   min-width: 300px;
   min-height: 300px;
   z-index: 1;
+  font-size: 0.8rem;
+}
 
+.authbtn {
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #fe9d0b;
+  color: #f1f1f1;
+  font-size: 0.9rem;
 }

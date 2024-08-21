@@ -129,6 +129,14 @@
       "itemDescription": "kiwi",
       "itemCategory": "home supplies",
       "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "a769",
+      "itemName": "coke",
+      "itemQuantity": "1",
+      "itemDescription": "",
+      "itemCategory": "canned goods",
+      "userId": "2024-08-21T20:28:08.742Z"
     }
   ]
 }

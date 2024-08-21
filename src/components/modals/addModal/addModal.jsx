@@ -100,11 +100,11 @@ function AddModal({ deactivateModal, editing, handleDelete, itemId, initialData,
 
             {editing ? (
               <>
-                <button type="submit">Edit Item</button>
-                <button onClick={() => handleDelete(itemId)}>Delete</button>
+                <button type="submit" id="edit">Edit Item</button>
+                <button id="delete" onClick={() => handleDelete(itemId)}>Delete</button>
               </>
             ) : (
-              <button type="submit">Add Item</button>
+              <button id="add" type="submit">Add Item</button>
             )}
             <div className="closeModal">
               <IoMdCloseCircle onClick={deactivateModal} />

@@ -5,8 +5,6 @@ import axios from "axios";
 import Header from "../header/header";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
 function SignUp({ deactivateSignUpModal }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -14,7 +12,6 @@ function SignUp({ deactivateSignUpModal }) {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -60,57 +57,91 @@ function SignUp({ deactivateSignUpModal }) {
       .then((res) => {
         toast.success("User SignUp successful");
         navigate("/");
-
       })
       .catch((err) => {
         toast.error("Sign Up Failed due to :" + err.message);
-  
       });
     deactivateSignUpModal();
   }
 
   return (
     <>
-    <Header/>
-    <div className="modal">
-      <div className="overlay" onClick={deactivateSignUpModal}></div>
-      <div className="modalContent">
-        <form onSubmit={handleSubmit}>
-          <div className="formContainer">
-            <label>Full Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <label>Surname</label>
-            <input
-              type="text"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
-            />
-            <label>Username (Email)</label>
-            <input
-              type="email"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Sign Up</button>
-          </div>
-          <br />
-          <br />
-          <p>Already have an account ?<Link to={"/"}>Sign In</Link></p>
-        </form>
-        
+      <Header />
+      <div className="modal">
+        <div className="overlay" onClick={deactivateSignUpModal}></div>
+        <div className="modalContent">
+          <form onSubmit={handleSubmit}>
+            <div className="formContainer">
+              {/* <label>Full Name</label> */}
+              <h3>Sign Up</h3>
+
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="name"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              {/* <label>Surname</label> */}
+
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="text"
+                  value={surname}
+                  onChange={(e) => setSurname(e.target.value)}
+                  placeholder="surname"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              {/* <label>Username (Email)</label> */}
+
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="email"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="username"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              {/* <label>Password</label> */}
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="password"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              <button className="authbtn" type="submit">
+                Sign Up
+              </button>
+            </div>
+            <br />
+            <br />
+            <p>
+              Already have an account ?<Link to={"/"}>Sign In</Link>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
-    </> );
+    </>
+  );
 }
 
 export default SignUp;

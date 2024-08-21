@@ -26,7 +26,8 @@
   max-width: 600px;
   min-width: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  /* align-items: center; */
 }
 
 form {
@@ -61,7 +62,7 @@ form {
 
 .wrap-input-9 {
   width: 80%;
-  margin: 4px 3%;
+  /* margin: 4px 3%; */
   position: relative;
 }
 
@@ -125,4 +126,35 @@ form {
 
 .wrap-input-9 .input:focus ~ .focus-border i:after {
   transition-delay: 0.4s;
+}
+
+#edit {
+  background-color: yellow;
+  border-radius: 10px;
+  border: none;
+  height: 2rem;
+  font-size: 1em;
+  cursor: pointer;
+
+}
+
+#delete {
+  background-color: red;
+  border-radius: 10px;
+  border: none;
+  height: 2rem;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+
+}
+
+#add{
+    background-color: yellowgreen;
+    border-radius: 10px;
+    border: none;
+    height: 2rem;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
 }

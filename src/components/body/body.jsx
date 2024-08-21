@@ -221,7 +221,7 @@ function Body(props) {
               <AddModal
                 deactivateModal={deactivateModal}
                 editing={editing}
-                load={props.loadShopItem(userId)}
+                load={props.loadShopItem}
               />
             )}
             {editing && (

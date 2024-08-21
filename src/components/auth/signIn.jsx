@@ -50,24 +50,41 @@ function SignIn({ deactivateSignInModal }) {
         <div className="modalContent">
           <form onSubmit={handleSubmit}>
             <div className="formContainer">
-              <label>Username (Email)</label>
-              <input
-                type="email"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <label>Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit">Sign In</button>
-            </div>
-            <p>
-              {" "}
+              {/* <label>Username (Email)</label> */}
+              <h3>Sign in</h3>
+
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="email"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="username"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              {/* <label>Password</label> */}
+
+              <div className="wrap-input-9">
+                <input
+                  className="input"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="password"
+                />
+                <span className="focus-border">
+                  <i></i>
+                </span>
+              </div>
+              <button className="authbtn" type="submit">Sign In</button>
+              <p>
               Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
+            </div>
+          
           </form>
         </div>
       </div>
