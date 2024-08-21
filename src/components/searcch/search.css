@@ -7,8 +7,15 @@
   margin: 20px 0;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .search input {
-  height: 2.5rem;
+  height: 3rem;
   background-color: #fe9d0b;
   border: none;
   border-radius: 15px;

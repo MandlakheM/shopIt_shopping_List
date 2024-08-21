@@ -1,0 +1,11 @@
+.share button{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #fe9d0b;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+}

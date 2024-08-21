@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./search.css";
+import CapturePage from "../sharing/capture";
 
 function Search({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -25,6 +26,7 @@ function Search({ onSearch }) {
           value={searchQuery}
           onChange={handleSearchChange}
         />
+        <CapturePage />
       </div>
     </div>
   );
