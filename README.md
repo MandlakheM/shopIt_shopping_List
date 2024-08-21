@@ -18,8 +18,6 @@ vi) Allow users to share shopping lists with others.
 
 vii) The app uses JSON-Server to store data.
 
-viii) Implement user authentication to manage shopping lists securely.
-
 
 
 ## SCREENSHOTS
