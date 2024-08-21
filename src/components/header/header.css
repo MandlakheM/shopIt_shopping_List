@@ -3,9 +3,16 @@
     grid-template-columns: 1fr 1fr;
     /* background-color: aqua; */
     height: 20%;
+    padding-top: 1rem;
 }
 
-.logo{
-    /* background-color: black; */
+.auth{
+    display: flex;
+    justify-content: flex-end;
 }
 
+#it{
+    color: darkorange;
+    font-size: 2rem;
+    font-weight: 500;
+}

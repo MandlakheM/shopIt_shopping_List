@@ -15,7 +15,7 @@ function Header() {
     } else {
       setUserToggle(true);
     }
-  }, [userToggle]);
+  }, []);
 
   function activateSignUpModal() {
     setSignUpModal(true);
@@ -42,11 +42,10 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">Shop it</div>
+      <div className="logo"><h1>Shop <span id="it">it.</span></h1></div>
       <div className="userInfo">
-        <p>Name: </p>
-        <p>Surname: </p>
-        <div>
+
+        <div className="auth">
           {userToggle ? (
             <button onClick={handleSignOut}>Sign Out</button>
           ) : (

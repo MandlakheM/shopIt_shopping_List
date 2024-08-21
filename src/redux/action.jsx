@@ -48,7 +48,7 @@ export const updateItem = () => {
   };
 };
 
-export const getItemObj = () => {
+export const getItemObj = (data) => {
   return {
     type: GET_ITEM_OBJECT,
     payload: data,
@@ -88,6 +88,8 @@ export const addShoppingItem = (data) => {
 export const removeShoppingItem = (id) => {
   return (dispatch) => {
     dispatch(makeRequest());
+    console.log("Item ID to delete:", id);
+
     axios
       .delete("http://localhost:3030/items/" + id)
       .then((res) => {
@@ -100,14 +102,30 @@ export const removeShoppingItem = (id) => {
   };
 };
 
-export const updateShoppingItem = (data, id) => {
+export const updateShoppingItem = (id, data) => {
   return (dispatch) => {
     dispatch(makeRequest());
     axios
-      .put("http://localhost:3030/items", id, data)
-      .then((res) => {
+    .patch(`http://localhost:3030/items/${id}`, data)
+    .then((res) => {
         dispatch(updateItem());
         toast.success("Item updated");
+      })
+      .catch((error) => {
+        dispatch(failRequest(error.message));
+      });
+  };
+};
+
+export const fetchShoppingObj = (id) => {
+  return (dispatch) => {
+    dispatch(makeRequest());
+    axios
+      .get("http://localhost:3030/items/" + id)
+      .then((res) => {
+        const shoppingList = res.data;
+        console.log(shoppingList)
+        // dispatch(getItemObj(shoppingList));
       })
       .catch((error) => {
         dispatch(failRequest(error.message));

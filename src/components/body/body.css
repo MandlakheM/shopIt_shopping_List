@@ -3,7 +3,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
 }
 
@@ -21,19 +21,79 @@
   position: relative;
   text-align: center;
   border: 1px solid black;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
 }
 
+.fruits::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
 /* span {
-  position: absolute;
-  top: -0.5rem;
+  position: sticky;
+  top: 0;
   left: 6rem;
-  background-color: white;
-} */
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 250;
+  /* background-color: white; */
+
 
 .addButton {
   position: absolute;
   top: -1.5rem;
   right: -1.5rem;
 }
+
+.l{
+    display: grid;
+    place-content: center;
+    /* height: 100dvh; */
+    width: 100vw;
+justify-content: center;}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    --R: 30px;
+    --g1: #514b82 96%, #0000;
+    --g2: #eeeeee 96%, #0000;
+    width: calc(2*var(--R));
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    -webkit-mask: linear-gradient(#000 0 0);
+    animation: l30 2s infinite linear;
+  }
+  .loader::before,
+  .loader::after{
+    content:"";
+    grid-area: 1/1;
+    width: 50%;
+    background:
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R))  0,
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R)   - var(--R));
+     background-size: calc(2*var(--R)) calc(2*var(--R));
+     background-repeat :no-repeat;
+  }
+  .loader::after {
+   transform: rotate(180deg);
+   transform-origin: right;
+  }
+  
+  @keyframes l30 {
+    100% {transform: rotate(-1turn)}
+  }

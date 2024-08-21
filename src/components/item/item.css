@@ -6,19 +6,28 @@
     align-items: center;
     justify-content: space-around;
     height: 50px;
-    border: 1px solid red;
+    /* border-bottom:  solid red; */
+    /* margin-top: 1rem; */
+}
+
+.itemContainer:hover{
+    background-color: #e0fbfc;
 }
 
 .icon{
     width: 10%;
+    font-size: 1.5rem;
 }
 
 .itemName{
     width: 40%;
+    font-size: 0.8rem;
+
 }
 
 .itemQuantity{
     width: 20%;
+    font-size: 0.8rem;
 }
 
 .description{
@@ -26,4 +35,6 @@
     overflow-y: hidden;
     overflow: none;
     line-height: 1;
+    font-size: 0.8rem;
+
 }

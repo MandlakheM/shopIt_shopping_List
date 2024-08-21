@@ -1,6 +1,35 @@
-#addButton{
-    height: 3.5rem;
-    width: 3.5rem;
-    border-radius: 50%;
-    cursor: pointer;
+#addButton {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.addButton button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fe9d0b;
+  width: 8rem;
+  height: 7.8rem;
+  color: white;
+  font-size: 5rem;
+  border: none;
+  cursor: pointer;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  border: 1px solid;
+  box-shadow: 0 0 0 0.5em transparent;
+  overflow: hidden;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #f49301;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #f49301;
+  }
 }

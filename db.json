@@ -11,18 +11,11 @@
   ],
   "items": [
     {
-      "id": 1,
-      "itemName": "switch",
-      "itemDescription": "an energy drink",
-      "itemQuantity": 6,
-      "itemCategory": "drinks"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "itemName": "apple",
       "itemDescription": "just a fruit",
       "itemQuantity": 2,
-      "itemCategory": "fruints"
+      "itemCategory": "fruits/veg"
     },
     {
       "id": "92f4",
@@ -40,11 +33,99 @@
       "userId": "2024-08-19T09:05:18.311Z"
     },
     {
-      "id": "42db",
-      "itemName": "juice",
+      "id": "43db",
+      "itemName": "redbull",
+      "itemQuantity": "16",
+      "itemDescription": "energy drink",
+      "itemCategory": "canned goods",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "1b8d",
+      "itemName": "vaseline",
       "itemQuantity": "1",
-      "itemDescription": "oros",
+      "itemDescription": "blue seal",
+      "itemCategory": "toiletries",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "4ca4",
+      "itemName": "onions",
+      "itemQuantity": "1",
+      "itemDescription": "full pack",
+      "itemCategory": "fruits/veg",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "9a83",
+      "itemName": "beef",
+      "itemQuantity": "2",
+      "itemDescription": "T-bone ",
       "itemCategory": "meat",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "be35",
+      "itemName": "jam",
+      "itemQuantity": "1",
+      "itemDescription": "apricot flavour",
+      "itemCategory": "canned goods",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "32c8",
+      "itemName": "mont blanc",
+      "itemQuantity": "1",
+      "itemDescription": "cologne",
+      "itemCategory": "toiletries",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "ded5",
+      "itemName": "paint",
+      "itemQuantity": "2",
+      "itemDescription": "20 liters brown colour",
+      "itemCategory": "home supplies",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "8d17",
+      "itemName": "iphone 15",
+      "itemQuantity": "1",
+      "itemDescription": "pro max",
+      "itemCategory": "other",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "1200",
+      "itemName": "chappies",
+      "itemQuantity": "5",
+      "itemDescription": "watermelon",
+      "itemCategory": "other",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "79b2",
+      "itemName": "",
+      "itemQuantity": "",
+      "itemDescription": "",
+      "itemCategory": "",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "3aac",
+      "itemName": "nex",
+      "itemQuantity": "",
+      "itemDescription": "",
+      "itemCategory": "",
+      "userId": "2024-08-19T09:05:18.311Z"
+    },
+    {
+      "id": "c9bc",
+      "itemName": "mofaya",
+      "itemQuantity": "",
+      "itemDescription": "",
+      "itemCategory": "",
       "userId": "2024-08-19T09:05:18.311Z"
     }
   ]

@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./addModal.css";
 import { useDispatch } from "react-redux";
-import { addShoppingItem } from "../../../redux/action";
+import { addShoppingItem, updateShoppingItem } from "../../../redux/action";
+import { IoMdCloseCircle } from "react-icons/io";
 
-function addModal({ deactivateModal, editing, handleDelete }) {
+function AddModal({ deactivateModal, editing, handleDelete, itemId, initialData }) {
   const [itemName, setItemName] = useState("");
   const [itemQuantity, setItemQuantity] = useState("");
   const [itemDescription, setItemDescription] = useState("");
   const [itemCategory, setItemCategory] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (editing && initialData) {
+      setItemName(initialData.itemName);
+      setItemQuantity(initialData.itemQuantity);
+      setItemDescription(initialData.itemDescription);
+      setItemCategory(initialData.itemCategory);
+    }
+  }, [editing, initialData]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,21 +30,13 @@ function addModal({ deactivateModal, editing, handleDelete }) {
       itemCategory,
       userId,
     };
-    dispatch(addShoppingItem(shoppingobj));
-    deactivateModal();
-  }
 
-  function handleEdit(e) {
-    e.preventDefault();
-    const userId = localStorage.getItem("userId");
-    const shoppingobj = {
-      itemName,
-      itemQuantity,
-      itemDescription,
-      itemCategory,
-      userId,
-    };
-    dispatch(addShoppingItem(shoppingobj));
+    if (editing) {
+      dispatch(updateShoppingItem(itemId, shoppingobj));
+    } else {
+      dispatch(addShoppingItem(shoppingobj));
+    }
+
     deactivateModal();
   }
 
@@ -44,60 +46,60 @@ function addModal({ deactivateModal, editing, handleDelete }) {
         <div className="overlay" onClick={deactivateModal}></div>
         <div className="modalContent">
           <form onSubmit={handleSubmit}>
-            <input
-              value={itemName}
-              onChange={(e) => setItemName(e.target.value)}
-              type="text"
-              name=""
-              id=""
-              placeholder="item name"
-            />
-            <input
-              value={itemDescription}
-              onChange={(e) => setItemDescription(e.target.value)}
-              type="text"
-              name=""
-              id=""
-              placeholder="item description"
-            />
-            <input
-              value={itemQuantity}
-              onChange={(e) => setItemQuantity(e.target.value)}
-              type="text"
-              name=""
-              id=""
-              placeholder="item quantity"
-            />
+            <div className="wrap-input-9">
+              <input
+                className="input"
+                value={itemName}
+                onChange={(e) => setItemName(e.target.value)}
+                type="text"
+                placeholder="Item Name"
+              />
+              <span className="focus-border"><i></i></span>
+            </div>
+            <div className="wrap-input-9">
+              <input
+                className="input"
+                value={itemDescription}
+                onChange={(e) => setItemDescription(e.target.value)}
+                type="text"
+                placeholder="Item Description"
+              />
+              <span className="focus-border"><i></i></span>
+            </div>
+            <div className="wrap-input-9">
+              <input
+                className="input"
+                value={itemQuantity}
+                onChange={(e) => setItemQuantity(e.target.value)}
+                type="text"
+                placeholder="Item Quantity"
+              />
+              <span className="focus-border"><i></i></span>
+            </div>
             <select
+              className="input"
               value={itemCategory}
               onChange={(e) => setItemCategory(e.target.value)}
-              name=""
-              id=""
             >
-              <option value="item category">item category</option>
-              <option value="fruits/veg">fruits/veg</option>
-              <option value="meat">meat</option>
-              <option value="canned goods">canned goods</option>
-              <option value="toiletries">toiletries</option>
-              <option value="home supplies">home supplies</option>
-              <option value="other">other</option>
+              <option value="item category">Item Category</option>
+              <option value="fruits/veg">Fruits/Veg</option>
+              <option value="meat">Meat</option>
+              <option value="canned goods">Canned Goods</option>
+              <option value="toiletries">Toiletries</option>
+              <option value="home supplies">Home Supplies</option>
+              <option value="other">Other</option>
             </select>
 
             {editing ? (
               <>
-                <button>done </button>
-                <button>edit </button>
-                <button onClick={handleDelete}>delete </button>
+                <button type="submit">Edit Item</button>
+                <button onClick={() => handleDelete(itemId)}>Delete</button>
               </>
             ) : (
-              <button type="submit">add item</button>
+              <button type="submit">Add Item</button>
             )}
-            {/* <button>add item</button>
-          <button>done </button>
-          <button>edit </button>
-          <button>delete </button> */}
             <div className="closeModal">
-              <button onClick={deactivateModal}>close</button>
+              <IoMdCloseCircle onClick={deactivateModal} />
             </div>
           </form>
         </div>
@@ -106,4 +108,4 @@ function addModal({ deactivateModal, editing, handleDelete }) {
   );
 }
 
-export default addModal;
+export default AddModal;

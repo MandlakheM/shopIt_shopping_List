@@ -5,6 +5,8 @@
   display: grid;
   place-content: center;
   overflow-x: hidden;
+  /* background: url(./assets/Wavy_Gen-04_Single-06.jpg); */
+
 }
 
 .layout {
