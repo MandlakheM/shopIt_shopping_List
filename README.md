@@ -33,7 +33,7 @@ Step-by-step instructions on how to get the development environment running.
 
 # Clone the repository
 
-git clone https://github.com/yourusername/projectname.git
+git clone https://github.com/MandlakheM/shopIt_shopping_List.git
 
 # Navigate to the project directory
 
